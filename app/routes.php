@@ -15,3 +15,24 @@ Route::get('/', function()
 {
     return View::make('index');
 });
+
+Route::get('/parts', function()
+{
+    return View::make('parts');
+});
+//Route::get('/searchResult', function () {
+//    $data = DB::table('acc_items')->get();
+//    return Response::json(array('success'=>true,'records'=>$data));
+//    //return $data;
+//});
+
+Route::get('/searchResult', 'SearchResult@getAllData');
+
+// ****************Admin****************
+
+Route::get('/admin', function()
+{
+    return View::make('admin/index');
+});
+
+Route::post('/update', 'Admin@update');

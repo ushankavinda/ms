@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
     <head>
         <meta charset="UTF-8">
         <title>Index</title>
@@ -26,13 +26,12 @@
                                 <h1>MS Tools</h1>
                             </div>
                             <div class="col-lg-4 visible-lg" style="padding-right:0;padding-left: 0;">
-<!--                                <form>
+                                <form>
                                     <div class="form-group" style="margin-top: 2em;">
-                                        <input id="search" type="text" class="form-control" 
-                                               id="exampleInputEmail1" placeholder="Search...">
+                                        <input ng-model="search" type="text" class="form-control" placeholder="Search...">
                                         
                                     </div>
-                                </form>-->
+                                </form>
                             </div>
                         </header>
                         
@@ -58,7 +57,7 @@
                                     </button>
                                     <div class="container collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav">
-                                            <li class="text-center"><a href="#">Home</a></li>
+                                            <li class="text-center"><a href="/">Home</a></li>
                                             <li class="text-center"><a href="#">About Us</a></li>
                                             <li class="dropdown text-center">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
@@ -102,85 +101,42 @@
                             </a>
                         </div>
                         
-                        <p style="padding: 2em;" class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <hr>
-                        <h3 class="hidden-xs">Products</h3>
-                            
-                            <div id="myCarousel" class="carousel slide hidden-xs">
-
-                                <!-- Carousel items -->
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                        <div class="row">
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                        </div>
-                                        <!--/row-->
-                                    </div>
-                                    <!--/item-->
-                                    <div class="item">
-                                        <div class="row">
-                                             <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                        </div>
-                                        <!--/row-->
-                                    </div>
-                                    <!--/item-->
-                                    <div class="item">
-                                        <div class="row">
-                                             <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                            <div class="col-sm-2"><a href="#x"><img src="http://placehold.it/150x150" alt="Image" class="img-responsive"></a>
-                                            </div>
-                                        </div>
-                                        <!--/row-->
-                                    </div>
-                                    <!--/item-->
-                                </div>
-                                <!--/carousel-inner--> 
-                                <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="padding-top:6%;width:5%;">‹</a>
-
-                                <a class="right carousel-control" href="#myCarousel" data-slide="next" style="padding-top:6%;width:5%;">›</a>
+                       
+                        <div class="col-lg-3" ng-controller="MyController">
+                            <div class="panel panel-primary" id="productPanel">
+                              <div class="panel-heading" id="panelHead">
+                              <h3 class="panel-title">Parts</h3>
                             </div>
-                            <!--/myCarousel-->
+                            <div class="panel-body">
+                              <ul class="list-group">
+                                  <li class="list-group-item" ng-repeat="item in searchData | filter: { catergory: '0' } "> <a href="#" ng-click="myFilter =  item.name ">{{ item.name }}</a></li>
+
+                              </ul>
+                            </div>
+                          </div>
+                            
+                        </div>
+                        
+                        <div class="col-lg-9" ng-controller="MyController">
+                            <div class="panel panel-primary" id="productPanel">
+                              <div class="panel-heading" id="panelHead">
+                              <h3 class="panel-title">Panel title</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="col-lg-3 col-md-4 col-xs-6 thumb" ng-repeat="itemm in searchData | filter: { catergory: '0' }| filter: search | filter:myFilter ">
+                                    <a class="thumbnail" href="#">
+                                       
+                                        <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
                        
                     </div>
                 </div>
                
-                
+                </div>      
                
             </div>
         </div>

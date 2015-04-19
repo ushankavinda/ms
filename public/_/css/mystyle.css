@@ -60,6 +60,35 @@ hr {
     background-color: #161616;
 }
 
+.list-group-item {
+    background-color: #161616;
+}
+
+#productPanel {
+    border-radius: 0;
+    border-color: #161616;
+    background-color: #161616;
+    -webkit-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+}
+
+#panelHead {
+    background-color: #003487;
+    border-radius: 0;
+    border-color: #003487;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 .navbar-default {
